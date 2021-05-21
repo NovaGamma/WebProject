@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login</title>
+  <title>TBOI Challenge Generator - Login</title>
   <link href="login.css" rel="stylesheet">
 </head>
 <body>
-  <form class="box" action="home.html" method="post">
+  <form class="box" action="javascript:goHome()" method="get">
     <h1>Login</h1>
     <input type="text" placeholder="Username">
     <input type="password" placeholder="Password">
     <input type="submit" value="Login">
   </form>
+  <script>
+    function goHome(){
+      window.location.href = "home.html"
+    }
+  </script>
 </body>
 </html>
