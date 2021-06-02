@@ -13,7 +13,14 @@
   </form>
   <script>
     function goHome(){
-      window.location.href = "home.html"
+      let form = document.forms[0];
+      if (form.checkValidity() == false){
+        alert("The form is not filled correctly");
+        return
+      }
+      else{
+        window.location.href = "home.html";
+      }
     }
   </script>
 </body>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TBOI Challenge Generator</title>
+  <script src="generateChallenge.js"></script>
+  <link href="login.css" rel="stylesheet">
+  <style>
+    header{
+      background-color: #4c2413;
+    }
+  	.head{
+  		background-color: #4c2413;
+  		font-size: 20px;
+  		color: #c19168;
+      padding-left: 60px;
+  	}
+  	a:hover { color: #e2c3a1; }
+	  a:active { color: #855839; }
+    a{
+      color: #c19168;
+      padding-right: 10px;
+    }
+  	.body{
+  		color: #e2c3a1;
+      padding-left: 30px;
+  	}
+  	body{
+  		background-color: #855839;
+  	}
+    label{
+      padding-right: 20px;
+    }
+  </style>
+  <header>
+    <div class=head>
+      <h1 style="color: white">The Binding of Isaac : Rebirth</h1>
+      <a href="login.html">Log in</a>
+      <a href="home.html">Home</a>
+    </div>
+  </header>
+</head>
+<body>
+  <form action="javascript:generateChallenge()">
+  <div class=body>
+    <p>Select the last DLC you have :</p>
+    <input type="radio" id="rebirth" name="DLC" value="rebirth">
+    <label for="rebirth">Rebirth</label>
+    <input type="radio" id="ab" name="DLC" value="ab">
+    <label for="ab">Afterbirth</label>
+    <input type="radio" id="ab+" name="DLC" value="ab+">
+    <label for="ab+">Afterbirth+</label>
+    <input type="radio" id="repentance" name="DLC" value="repentance">
+    <label for="repentance">Repentance</label>
+  </div>
+  <h1 class=body>Unlocks</h1>
+  <div class=body style="padding-left: 50px;">
+    <h2>Characters</h2>
+    <input type="checkbox" id="azazel" name="azazel" class="perso">
+    <label for="azazel">Azazel</label>
+    <input type="checkbox" id="maggy" name="maggy" class="perso">
+    <label for="maggy">Magdalene</label>
+    <input type="checkbox" id="lazarus" name="lazarus" class="perso">
+    <label for="lazarus">Lazarus</label>
+  </div>
+  <div class=body style="padding-left: 50px;">
+    <h2>Bosses</h2>
+    <input type="checkbox" id="???" name="???" class="boss">
+    <label for="???">???</label>
+    <input type="checkbox" id="the lamb" name="the lamb" class="boss">
+    <label for="the lamb">The Lamb</label>
+    <input type="checkbox" id="mother" name="mother" class="boss">
+    <label for="mother">Mother</label>
+  </div>
+  <input type="submit" value="Generate Challenge">
+  </form>
+  <table class="form" id="challenges">
+    <thead id="table">
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
