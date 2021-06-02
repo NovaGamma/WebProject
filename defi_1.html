@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TBOI Challenge Generator</title>
+  <script src="generateChallenge.js"></script>
+  <link rel="icon" type="image/png" href="sissy_icon.png">
+  <link href="login.css" rel="stylesheet">
+  <style>
+  	.head{
+  		background-color: #4c2413;
+  		font-size: 20px;
+  		color: #c19168;
+      padding-left: 60px;
+  	}
+  	a:hover { color: #e2c3a1; }
+	  a:active { color: #855839; }
+    a{
+      color: #c19168;
+      padding-right: 10px;
+    }
+  	.body{
+  		color: #e2c3a1;
+      padding-left: 30px;
+  	}
+  	body{
+  		background-color: #855839;
+  	}
+    label{
+      padding-right: 20px;
+    }
+    .ab, .abp, .repent{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <h1 style="color: white">The Binding of Isaac : Rebirth</h1>
+    <a href="login.html">Log in</a>
+    <a href="home.html">Home</a>
+  </div>
+  <form action="javascript:generateChallenge()">
+    <div class="body">
+      <p>Select the last DLC you have :</p>
+      <input type="radio" id="rebirth" name="DLC" value="rebirth" checked onclick="birth();">
+      <label for="rebirth">Rebirth</label>
+      <input type="radio" id="ab" name="DLC" value="ab" onclick="birth();">
+      <label for="ab">Afterbirth</label>
+      <input type="radio" id="ab+" name="DLC" value="ab+" onclick="birth();">
+      <label for="ab+">Afterbirth+</label>
+      <input type="radio" id="repentance" name="DLC" value="repentance" onclick="birth();">
+      <label for="repentance">Repentance</label>
+    </div>
+    <h1 class="body">Unlocks</h1>
+    <div class="body" style="padding-left: 50px;">
+      <h2>Characters</h2>
+      <input type="checkbox" id="all" name="all" onclick="checkAllbyClass('perso','all');">
+      <label for="all">All</label>
+      <input class="perso" type="checkbox" id="maggy" name="Magdalene">
+      <label for="maggy">Magdalene</label>
+      <input class="perso" type="checkbox" id="cain" name="Cain">
+      <label for="cain">Cain</label>
+      <input class="perso" type="checkbox" id="judas" name="Judas">
+      <label for="judas">Judas</label>
+      <input class="perso" type="checkbox" id="blue_baby" name="Blue Baby">
+      <label for="blue_baby">???</label>
+      <input class="perso" type="checkbox" id="eve" name="Eve">
+      <label for="eve">Eve</label>
+      <input class="perso" type="checkbox" id="samson" name="Samson">
+      <label for="samson">Samson</label>
+      <input class="perso" type="checkbox" id="azazel" name="Azazel">
+      <label for="azazel">Azazel</label>
+      <input class="perso" type="checkbox" id="lazarus" name="Lazarus">
+      <label for="lazarus">Lazarus</label>
+      <input class="perso" type="checkbox" id="eden" name="Eden">
+      <label for="eden">Eden</label>
+      <input class="perso" type="checkbox" id="the_lost" name="The Lost">
+      <label for="the_lost">The Lost</label>
+      <br>
+      <input class="perso ab" type="checkbox" id="lilith" name="Lilith">
+      <label class="ab" for="lilith">Lilith</label>
+      <input class="perso ab" type="checkbox" id="keeper" name="Keeper">
+      <label class="ab" for="keeper">Keeper</label>
+      <input class="perso abp" type="checkbox" id="apollyon" name="Apollyon">
+      <label class="abp" for="apollyon">Apollyon</label>
+      <input class="perso abp" type="checkbox" id="the_forgotten" name="The Forgotten">
+      <label class="abp" for="the_forgotten">The Forgotten</label>
+      <input class="perso repent" type="checkbox" id="bethany" name="Bethany">
+      <label class="repent" for="bethany">Bethany</label>
+      <input class="perso repent" type="checkbox" id="jacob" name="Jacob">
+      <label class="repent" for="jacob">Jacob and Esau</label>
+    </div>
+    <div class="repent">
+    	<div class="body" style="padding-left: 50px;">
+    		<h2>Tainted Characters</h2>
+    		<input type="checkbox" id="tall" name="tall" onclick="checkAllbyClass('tainted','tall');">
+		    <label for="tall">All</label>
+		    <input class="tainted" type="checkbox" id="tmaggy" name="Tainted Magdalene">
+		    <label for="tmaggy">Magdalene</label>
+		    <input class="tainted" type="checkbox" id="tcain" name="Tainted Cain">
+		    <label for="tcain">Cain</label>
+		    <input class="tainted" type="checkbox" id="tjudas" name="Tainted Judas">
+		    <label for="tjudas">Judas</label>
+		    <input class="tainted" type="checkbox" id="tblue_baby" name="Tainted Blue Baby">
+		    <label for="tblue_baby">???</label>
+		    <input class="tainted" type="checkbox" id="teve" name="Tainted Eve">
+		    <label for="teve">Eve</label>
+		    <input class="tainted" type="checkbox" id="tsamson" name="Tainted Samson">
+		    <label for="tsamson">Samson</label>
+		    <input class="tainted" type="checkbox" id="tazazel" name="Tainted Azazel">
+		    <label for="tazazel">Azazel</label>
+		    <input class="tainted" type="checkbox" id="tlazarus" name="Tainted Lazarus">
+		    <label for="tlazarus">Lazarus</label>
+		    <input class="tainted" type="checkbox" id="teden" name="Tainted Eden">
+		    <label for="teden">Eden</label>
+		    <input class="tainted" type="checkbox" id="tlost" name="Tainted Lost">
+		    <label for="tlost">The Lost</label>
+		    <br>
+		    <input class="tainted" type="checkbox" id="tlilith" name="Tainted Lilith">
+		    <label for="tlilith">Lilith</label>
+		    <input class="tainted" type="checkbox" id="tkeeper" name="Tainted Keeper">
+		    <label for="tkeeper">Keeper</label>
+		    <input class="tainted" type="checkbox" id="tapollyon" name="Tainted Apollyon">
+		    <label for="tapollyon">Apollyon</label>
+		    <input class="tainted" type="checkbox" id="tforgotten" name="Tainted Forgotten">
+		    <label for="tforgotten">The Forgotten</label>
+		    <input class="tainted" type="checkbox" id="tbethany" name="Tainted Bethany">
+		    <label for="tbethany">Bethany</label>
+		    <input class="tainted" type="checkbox" id="tjacob" name="Tainted Jacob">
+		    <label for="tjacob">Jacob</label>
+    	</div>
+    </div>
+    <div class="body" style="padding-left: 50px;">
+      <h2>Bosses</h2>
+      <input type="checkbox" id="ball" name="ball" onclick="checkAllbyClass('boss','ball');">
+      <label for="ball">All</label>
+      <input class="boss" type="checkbox" id="isaac" name="Isaac">
+      <label for="isaac">Isaac</label>
+      <input class="boss" type="checkbox" id="satan" name="Satan">
+      <label for="satan">Satan</label>
+      <input class="boss" type="checkbox" id="???" name="???">
+      <label for="???">???</label>
+      <input class="boss" type="checkbox" id="the_lamb" name="The Lamb">
+      <label for="the_lamb">The Lamb</label>
+      <input class="boss" type="checkbox" id="mega_satan" name="Mega Satan">
+      <label for="mega_satan">Mega Satan</label>
+      <input class="boss ab" type="checkbox" id="hush" name="Hush">
+      <label class="ab" for="hush">Hush</label>
+      <input class="boss abp" type="checkbox" id="delirium" name="Delirium">
+      <label class="abp" for="delirium">Delirium</label>
+      <input class="boss repent" type="checkbox" id="mother" name="Mother">
+      <label class="repent" for="mother">Mother</label>
+      <input class="boss repent" type="checkbox" id="the_beast" name="The Beast">
+      <label class="repent" for="the_beast">The Beast</label>
+      <input class="boss abp" type="checkbox" id="greedier" name="Ultra Greedier">
+      <label class="abp" for="greedier">Ultra Greedier</label>
+    </div>
+    <br>
+    <div style="padding:10px;">
+    <input type="submit" value="Generate Challenge">
+    </div>
+    </form>
+    <table class="form" id="challenges">
+      <thead id="table">
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+</body>
+</html>

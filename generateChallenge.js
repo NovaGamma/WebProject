@@ -8,24 +8,24 @@ function generateChallenge(){
   let raw_perso = form.getElementsByClassName("perso");
   for(let i=0;i<raw_perso.length;i++){
     if(raw_perso[i].checked){
-      perso.push(raw_perso[i].id);
+      perso.push(raw_perso[i].name);
     }
   }
   let raw_tainted = form.getElementsByClassName("tainted");
   for(let i=0;i<raw_tainted.length;i++){
     if(raw_tainted[i].checked){
-      perso.push(raw_tainted[i].id);
+      perso.push(raw_tainted[i].name);
     }
   }
   if(perso.length == 0){
     alert("You haven't selected any character");
     return;
   }
-  var bosses = ["Mom's foot","Mom's heart","Ultra Greed"]
+  var bosses = ["Mom's foot","Mom's heart","Boss Rush","Ultra Greed"]
   let raw_bosses = form.getElementsByClassName("boss");
   for(let i=0;i<raw_bosses.length;i++){
     if(raw_bosses[i].checked){
-      bosses.push(raw_bosses[i].id);
+      bosses.push(raw_bosses[i].name);
     }
   }
   if(bosses.length == 0){
