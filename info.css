@@ -1,0 +1,33 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    padding-bottom: 80px;
+    min-height:100vh;
+    background-color: #855839;
+  }
+
+  h1,h2,h3,p{ 
+      padding: 5px;
+    }
+  
+a{
+    padding-right: 25%;
+}
+
+#charimg,#bossimg{
+    padding-left: 5px;
+    padding-right: 10px;
+}
+footer{
+    background-color:#495e34 ;
+    text-align: center;
+    height: 50px;
+    background-color:#495e34 ;
+    position:absolute;
+    color:black;
+    padding:15px;
+    width:100%;
+    }
