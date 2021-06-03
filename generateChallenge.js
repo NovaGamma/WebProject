@@ -46,17 +46,38 @@ function add(character, boss){
 
   let createdElement = document.createElement("tr");
   let td1 = document.createElement("td");
-  td1.textContent = character;
-  let td2 = document.createElement("td");
-  td2.textContent = boss;
+  td1.textContent = "Beat " + boss + " with " + character;
   createdElement.appendChild(td1);
-  createdElement.appendChild(td2);
   table.appendChild(createdElement);
 }
 
 function removeAll(){
   let table = document.getElementById('challenges')
   table.innerHTML = null
+}
+
+function uncheckHidden(){
+  let ab = document.getElementById("ab");
+  let abplus = document.getElementById("ab+");
+  let rep = document.getElementById("repentance");
+  let abs = document.getElementsByClassName("ab");
+  let abpluss = document.getElementsByClassName("abp");
+  let reps = document.getElementsByClassName("repent");
+  if (!(ab.checked || abplus.checked || rep.checked)){
+    for (var i = 0; i < abs.length; i++) {
+      abs[i].checked = false;
+    }
+  }
+  if (!(abplus.checked || rep.checked)){
+    for (var i = 0; i < abpluss.length; i++) {
+      abpluss[i].checked = false;
+    }
+  }
+  if (!rep.checked){
+    for (var i = 0; i < reps.length; i++) {
+      reps[i].checked = false;
+    }
+  }
 }
 
 function birth(){
@@ -90,6 +111,7 @@ function birth(){
       reps[i].style.display = "inline";
     }
   }
+  uncheckHidden();
 }
 
 function checkAllbyClass(className,buttonId){
@@ -98,4 +120,5 @@ function checkAllbyClass(className,buttonId){
   for (let i = 0; i < list_elements.length; i++) {
     list_elements[i].checked = value;
   }
+  uncheckHidden();
 }
